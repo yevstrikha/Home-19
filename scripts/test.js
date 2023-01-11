@@ -29,6 +29,8 @@ function showNext() {
 
 function showPrev() {
     --currentPic;
+    clearInterval(mySlider);
+
     if(currentPic < 0){
         currentPic = arr.length -1;
         myPicture.src = 'images/' + arr[currentPic] + '.jpg';
@@ -36,7 +38,7 @@ function showPrev() {
     }else{
         myPicture.src = 'images/' + arr[currentPic] + '.jpg';
     }
-    clearInterval(mySlider);
+    setInterval(showImg, 3000);
 }
 
 
